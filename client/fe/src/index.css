@@ -1,0 +1,121 @@
+/* Reset and base styles */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: #0f172a; /* dark blue/gray background */
+  color: #f1f5f9; /* light gray text */
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* Form container */
+form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px 30px;
+  max-width: 600px;
+  background: #1e293b; /* darker slate blue */
+  padding: 40px 50px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+}
+
+/* Full width elements take two columns */
+form > div:nth-last-child(2),
+form > div:nth-last-child(1),
+form > button {
+  grid-column: 1 / -1;
+}
+
+/* Labels */
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  color: #94a3b8; /* soft blue-gray */
+}
+
+/* Inputs and textarea */
+input,
+textarea {
+  width: 100%;
+  padding: 14px 18px;
+  border-radius: 8px;
+  border: 1.5px solid #475569; /* medium gray */
+  background: #334155; /* slate blue */
+  color: #f8fafc;
+  font-size: 16px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  font-family: inherit;
+  resize: vertical;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #6366f1; /* indigo */
+  box-shadow: 0 0 8px #6366f1;
+  outline: none;
+}
+
+/* Button styling */
+button {
+  background: linear-gradient(90deg, #4f46e5 0%, #4338ca 100%);
+  border: none;
+  color: white;
+  padding: 16px 0;
+  font-size: 18px;
+  font-weight: 700;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background: linear-gradient(90deg, #4338ca 0%, #4f46e5 100%);
+  transform: translateY(-3px);
+}
+
+/* Error messages */
+span {
+  grid-column: 1 / -1;
+  color: #ef4444; /* red-500 */
+  font-size: 13px;
+  font-weight: 600;
+  margin-top: 6px;
+}
+
+/* Error input styles */
+input.error,
+textarea.error {
+  border-color: #ef4444;
+  background: #7f1d1d;
+  color: #fee2e2;
+  box-shadow: 0 0 8px #ef4444;
+}
+
+input.error:focus,
+textarea.error:focus {
+  border-color: #b91c1c;
+  box-shadow: 0 0 10px #b91c1c;
+}
+
+/* Responsive: stack columns on narrow screens */
+@media (max-width: 600px) {
+  form {
+    grid-template-columns: 1fr;
+    padding: 30px 25px;
+  }
+  form > div:nth-last-child(2),
+  form > div:nth-last-child(1),
+  form > button {
+    grid-column: auto;
+  }
+}
