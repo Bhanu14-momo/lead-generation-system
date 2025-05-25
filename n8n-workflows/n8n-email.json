@@ -1,0 +1,37 @@
+{
+  "nodes": [
+    {
+      "parameters": {
+        "fromEmail": "2100520171bca@gmail.com",
+        "toEmail": "mouni12585@gmail.com",
+        "subject": "Hi from n8n",
+        "emailFormat": "text",
+        "text": "=Name: {{$node[\"Webhook\"].json[\"body\"][\"name\"]}}\nEmail: {{$node[\"Webhook\"].json[\"body\"][\"email\"]}}\nCompany: {{$node[\"Webhook\"].json[\"body\"][\"company\"] || \"N/A\"}}\nMessage: {{$node[\"Webhook\"].json[\"body\"][\"message\"] || \"No message provided\"}}\n",
+        "options": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2.1,
+      "position": [
+        220,
+        0
+      ],
+      "id": "972f9efa-0eee-49a9-add6-cf6d96ba5050",
+      "name": "Send Email",
+      "webhookId": "5764cdd9-446e-4409-9cd8-4e6272718dcc",
+      "credentials": {
+        "smtp": {
+          "id": "qnwdOyn2cFdTOrUI",
+          "name": "SMTP account"
+        }
+      }
+    }
+  ],
+  "connections": {},
+  "pinData": {},
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "a12416000f57d409b3bb7dbb89ba7ae60f4146ca3362500e15d7dee58a572b6a"
+  }
+}
